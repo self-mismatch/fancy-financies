@@ -37,30 +37,16 @@
                 "^production",
                 "{workspaceRoot}/jest.preset.js"
             ],
-            "options": {
-                "passWithNoTests": true
-            },
-            "configurations": {
-                "ci": {
-                    "ci": true,
-                    "codeCoverage": true
-                }
-            }
+            "options": { "passWithNoTests": true },
+            "configurations": { "ci": { "ci": true, "codeCoverage": true } }
         }
     },
     "plugins": [
         {
             "plugin": "@nx/playwright/plugin",
-            "options": {
-                "targetName": "e2e"
-            }
+            "options": { "targetName": "e2e" }
         },
-        {
-            "plugin": "@nx/eslint/plugin",
-            "options": {
-                "targetName": "lint"
-            }
-        }
+        { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } }
     ],
     "generators": {
         "@nx/angular:application": {
@@ -69,10 +55,8 @@
             "style": "scss",
             "unitTestRunner": "jest"
         },
-        "@nx/angular:component": {
-            "style": "scss"
-        }
+        "@nx/angular:component": { "style": "scss" }
     },
     "defaultProject": "fancy-financies",
-    "nxCloudAccessToken": "MzFlOTRmN2MtYzBiZi00MzMxLTgwMTgtYmYxNWNkM2UyMDFkfHJlYWQtd3JpdGU="
+    "nxCloudAccessToken": "ODhiNDI5MTUtNTczMy00ODc5LTk1OWYtOTAxODg1MGJjZWIwfHJlYWQtd3JpdGU="
 }
