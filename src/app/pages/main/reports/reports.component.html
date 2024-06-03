@@ -1,0 +1,67 @@
+<header class="header">
+    <h3>Отчёты</h3>
+
+    <button
+        *ngIf="!isCreatingReport"
+        tuiButton
+        size="m"
+        color="primary"
+        (click)="showCreatingReportForm()"
+    >
+        Создать
+    </button>
+</header>
+
+<ng-container *tuiLet="allReports$ | async as allReports">
+    @if (allReports?.length) {
+    <p>У вас {{ allReports?.length }} отчётов</p>
+    } @else {
+    <p>У вас пока нет отчётов</p>
+    }
+
+    <ng-container *ngIf="isCreatingReport">
+        <form
+            class="creating-report-form"
+            [formGroup]="creatingReportForm"
+            (ngSubmit)="createReport()"
+        >
+            <tui-input
+                tuiAutoFocus
+                formControlName="title"
+                (keydown.escape)="cancelCreatingReportForm()"
+                >Название</tui-input
+            >
+
+            <div>
+                <button
+                    tuiButton
+                    class="tui-space_right-2"
+                    size="m"
+                    type="submit"
+                >
+                    Создать
+                </button>
+                <button
+                    tuiButton
+                    appearance="outline"
+                    size="m"
+                    type="button"
+                    (click)="cancelCreatingReportForm()"
+                >
+                    Отменить
+                </button>
+            </div>
+        </form>
+    </ng-container>
+
+    <div class="report-cards">
+        @for (report of allReports; track report.id) {
+        <app-report-card
+            [title]="report.title"
+            [routerLink]="[report.id]"
+        ></app-report-card>
+        }
+    </div>
+</ng-container>
+
+<router-outlet></router-outlet>

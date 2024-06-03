@@ -1,0 +1,15 @@
+:host {
+    display: block;
+    width: 240px;
+    padding: 16px;
+
+    border: 1px solid var(--tui-base-05);
+    border-radius: var(--tui-radius-m);
+
+    transition-duration: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--tui-base-02);
+    }
+}

@@ -1,0 +1,8 @@
+<ng-container *tuiLet="report$ | async as report">
+    @if (report) {
+        <h3>{{ report.title }}</h3>
+    } @else {
+        <p>Отчёт не загрузился</p>
+    }
+
+</ng-container>

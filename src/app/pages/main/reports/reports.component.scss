@@ -1,0 +1,23 @@
+:host {
+    display: block;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.creating-report-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.report-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
